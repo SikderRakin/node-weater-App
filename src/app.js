@@ -5,6 +5,9 @@ const weatherstack = require('./utils/weather-forcast');
 const geocode = require('./utils/geocode');
 const { title } = require('process');
 const app= express()
+//port setup
+const port=process.env.PORT || 3000
+
 //define paths for express confiq
 const publicDirectorypath=path.join(__dirname,'../public')
 const viewPath=path.join(__dirname,'../templates/views')
@@ -86,6 +89,6 @@ app.get('*',(req,res)=>{
     })
 })
 
-app.listen(3000,()=>{
-    console.log("sever is up")
+app.listen(port,()=>{
+    console.log("sever is up port is "+port)
 })

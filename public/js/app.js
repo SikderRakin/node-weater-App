@@ -7,7 +7,7 @@ const message2=document.querySelector('#message2')
 weaterFrom.addEventListener('submit',(e) =>{
 
   e.preventDefault()
-  fetch('http://localhost:3000/weather?address='+search.value).then((response)=>{
+  fetch('/weather?address='+search.value).then((response)=>{
     response.json().then((data)=>{
       if(data.error){
           return message1.textContent='Location Not Found'
